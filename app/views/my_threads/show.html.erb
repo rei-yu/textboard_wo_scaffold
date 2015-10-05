@@ -1,2 +1,18 @@
 <h1>MyThreads#show</h1>
-<p>Find me in app/views/my_threads/show.html.erb</p>
+
+<%= render 'layouts/header' %>
+
+<p>
+	<strong>Title:</strong>
+	<%= @my_thread.title %>
+</p>
+
+<p>
+	<strong>Overview:</strong>
+	<%= @my_thread.overview %>
+</p>
+
+
+<%= link_to 'Edit', edit_my_thread_path(@my_thread) %> |
+<%= link_to 'Back', my_threads_path %>
+
