@@ -1,5 +1,5 @@
 class MyThreadsController < ApplicationController
-  before_action :set_board, only: [:show, :edit, :update, :destroy]
+  before_action :set_my_thread, only: [:show, :edit, :update, :destroy]
 
   def index
     @my_threads = MyThread.all
@@ -21,7 +21,7 @@ class MyThreadsController < ApplicationController
 
     respond_to do |format|
       if @my_thread.save
-        format.html { redirect to @my_thread, notice 'MyThread was successfully created' }
+        format.html { redirect_to @my_thread, notice: 'MyThread was successfully created' }
         format.json { render :show, status: :created, location: @my_thread }
       else
         format.html { render :new }
@@ -33,7 +33,7 @@ class MyThreadsController < ApplicationController
   def update
     respond_to do |format|
       if @my_thread.update(my_thread_params)
-        format.html { redirect to @my_thread, notice 'MyThread was successfully updated' }
+        format.html { redirect_to @my_thread, notice: 'MyThread was successfully updated' }
         format.json { render :show, status: :created, location: @my_thread }
       else
         format.html { render :edit }
@@ -45,7 +45,7 @@ class MyThreadsController < ApplicationController
   def destroy
     @my_thread.destroy
     respond_to do |format|
-      format.hrml { redirect to my_threads_url, notice: 'MyThread was successfully destroyed' }
+      format.html { redirect_to my_threads_url, notice: 'MyThread was successfully destroyed' }
       format.json { head :no_content }
     end
   end

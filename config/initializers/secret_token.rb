@@ -24,4 +24,4 @@ def secure_token
   end
 end
 
-Textboard_advanced::Application.config.secret_key_base = secure_token
+TextboardAdvanced::Application.config.secret_key_base = secure_token
