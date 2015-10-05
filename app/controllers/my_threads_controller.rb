@@ -1,6 +1,6 @@
 class MyThreadsController < ApplicationController
   def index
-    @my_threads = MyThread.all?
+    @my_threads = MyThread.all
   end
 
   def show
