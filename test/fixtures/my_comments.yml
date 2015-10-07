@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pen_name: MyString
+  comment: MyString
+  my_thread_id: 
+
+two:
+  pen_name: MyString
+  comment: MyString
+  my_thread_id: 

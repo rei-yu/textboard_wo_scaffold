@@ -7,6 +7,8 @@ class MyThreadsController < ApplicationController
 
   def show
     @my_thread = MyThread.find(params[:id])
+    @my_comments = @my_thread.my_comments
+    @my_comment = MyComment.new
   end
 
   def new
