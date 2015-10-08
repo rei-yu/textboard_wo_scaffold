@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   root to: "my_threads#index"
 
   resources :my_threads, shallow: true do

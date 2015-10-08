@@ -1,2 +1,2 @@
-module MyThreads::MyCommentsHelper
+module MyCommentsHelper
 end

@@ -20,6 +20,8 @@ class MyThreadsController < ApplicationController
 
   def create
     @my_thread = MyThread.new(my_thread_params)
+    @user = current_user
+    @my_thread.user_id = @user.id
 
     respond_to do |format|
       if @my_thread.save
