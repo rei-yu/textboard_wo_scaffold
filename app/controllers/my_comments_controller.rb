@@ -1,5 +1,5 @@
 class MyCommentsController < ApplicationController
-	before_action :set_my_comment, only: [:edit, :update, :destroy]
+  before_action :set_my_comment, only: [:edit, :update, :destroy]
 	before_action :set_my_thread, only: [:update, :destroy]
 
   def index
@@ -16,6 +16,8 @@ class MyCommentsController < ApplicationController
   def create
   	@my_thread = MyThread.find(params[:my_thread_id])
     @my_comment = @my_thread.my_comments.build(my_comment_params)
+    @user = current_user
+    @my_comment.user_id = @user.id
 
     respond_to do |format|
       if @my_comment.save

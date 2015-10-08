@@ -1,1 +1,15 @@
 <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+<div id="menu">
+<% if user_signed_in? %>
+  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+  <a href="/users/sign_out" data-method="delete" rel="nofollow" data-confirm="Are you sure?">Delete session</a>
+<% else %>
+  <%- if controller_name != 'sessions' %>
+	  <%= link_to "Log in", new_session_path(:user) %>
+	<% end -%>
+
+	<%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+  	<%= link_to "Sign up", new_registration_path(:user) %>
+	<% end -%>
+<% end %>
+</div>
